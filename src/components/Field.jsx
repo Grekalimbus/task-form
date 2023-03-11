@@ -1,6 +1,14 @@
 import React from 'react';
 
-const Field = ({ styles, title, name, value, handleChangeData, error }) => {
+const Field = ({
+  styles,
+  title,
+  name,
+  value,
+  handleChangeData,
+  error,
+  checkKeyDown,
+}) => {
   return (
     <div className={styles.fieldOneInput}>
       <label htmlFor="" className={styles.label}>
@@ -12,6 +20,7 @@ const Field = ({ styles, title, name, value, handleChangeData, error }) => {
         <p className={styles.titleError}></p>
       )}
       <input
+        onKeyDown={checkKeyDown}
         onChange={(e) => handleChangeData(e)}
         name={name}
         value={value}

@@ -29,6 +29,11 @@ const Form = ({ display }) => {
   function checkDisplay(display) {
     return !display ? { display: 'none' } : { display: '' };
   }
+  let validateKeyCode = '';
+  function checkKeyDown(e) {
+    validateKeyCode = e.keyCode;
+    return e.keyCode;
+  }
 
   function handleChangeData(e) {
     const { target } = e;
@@ -36,7 +41,7 @@ const Form = ({ display }) => {
     console.log(transormSTR);
     if (target.name === 'phone') {
       let value = target.value.length;
-      if (value === 12 || value === 15) {
+      if ((validateKeyCode !== 8 && value === 12) || value === 15) {
         transormSTR = transormSTR + '-';
       }
       if (value === 4) {
@@ -71,6 +76,7 @@ const Form = ({ display }) => {
     >
       <h2 className={styles.title}>Форма обратной связи</h2>
       <Field
+        checkKeyDown={checkKeyDown}
         error={errors.phone}
         handleChangeData={handleChangeData}
         name="phone"
