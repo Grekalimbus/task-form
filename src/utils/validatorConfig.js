@@ -1,8 +1,14 @@
 const validatorConfig = {
   phone: {
     isRequired: { message: 'Номер обязательнен для заполнения' },
-    correctPhone: {
-      message: 'Данные не корректны',
+    notPlus: {
+      message: 'Перед вводом должен быть "+"',
+    },
+    notLength: {
+      message: 'Кол-во цифр не соответсвует',
+    },
+    otherSymbol: {
+      message: 'Разрешены только цифры',
     },
   },
   name: {

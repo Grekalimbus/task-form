@@ -14,7 +14,6 @@ const Form = ({ display }) => {
   const [errors, setErrors] = useState({});
   useEffect(() => {
     validate();
-    console.log(errors);
   }, [dataForm]);
 
   const validate = () => {
@@ -33,22 +32,27 @@ const Form = ({ display }) => {
 
   function handleChangeData(e) {
     const { target } = e;
+    let transormSTR = target.value;
+    console.log(transormSTR);
     if (target.name === 'phone') {
       let value = target.value.length;
-      console.log(value);
       if (value === 12 || value === 15) {
-        target.value = target.value + ' ';
+        transormSTR = transormSTR + '-';
       }
       if (value === 4) {
-        const newStr = `${target.value.slice(0, 3)}`;
-        target.value = newStr + '(' + target.value[3];
+        transormSTR =
+          target.value[0] +
+          target.value[1] +
+          target.value[2] +
+          '(' +
+          target.value[3];
       }
       if (value === 7) {
-        target.value = target.value + ') ';
+        transormSTR = transormSTR += ') ';
       }
       setDataForm((prevState) => ({
         ...prevState,
-        [target.name]: target.value,
+        [target.name]: transormSTR,
       }));
     } else {
       setDataForm((prevState) => ({
