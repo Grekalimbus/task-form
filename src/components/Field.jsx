@@ -1,12 +1,18 @@
 import React from 'react';
 
-const Field = ({ styles }) => {
+const Field = ({ styles, title, name, value, handleChangeData }) => {
   return (
     <div className={styles.fieldOneInput}>
       <label htmlFor="" className={styles.label}>
-        Номер
+        {title}
       </label>
-      <input type="text" className={styles.input} />
+      <input
+        onChange={(e) => handleChangeData(e)}
+        name={name}
+        value={value}
+        type="text"
+        className={styles.input}
+      />
     </div>
   );
 };
