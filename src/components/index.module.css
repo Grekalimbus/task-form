@@ -21,8 +21,9 @@
 }
 .titleError{
     color: rgb(228, 4, 4);
-    font-weight: 500;
-    font-size: 16px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
 }
 /* FIELD COMPONENT */
 .fieldOneInput{
@@ -71,6 +72,14 @@
 /* ======================= */
 
 /* Big height */
+@media (min-height: 700px ) and (min-width: 1000px){
+    .formWrapper{             
+        height: 80%;
+    }
+    .button{
+        font-size: 28px;
+    }    
+}
 @media (min-height: 940px ) and (min-width: 800px){
     .formWrapper{   
         width: 60%;     
@@ -145,6 +154,12 @@
 @media (max-width: 600px ){
     .formWrapper{    
         width: 80%;         
+    }       
+}
+@media (max-width: 300px ){
+    .formWrapper{    
+        width: 80%; 
+        height: 95%;        
     }       
 }
 

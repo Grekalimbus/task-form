@@ -39,6 +39,11 @@ function validator(data, config) {
           return config.message;
         }
         break;
+      case 'notLength':
+        if (data.length < 18) {
+          return config.message;
+        }
+        break;
     }
   }
   for (const fieldName in data) {

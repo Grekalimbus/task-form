@@ -20,6 +20,7 @@ const Field = ({
         <p className={styles.titleError}></p>
       )}
       <input
+        placeholder={title}
         onKeyDown={checkKeyDown}
         onChange={(e) => handleChangeData(e)}
         name={name}

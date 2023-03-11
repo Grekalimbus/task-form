@@ -4,6 +4,7 @@ import styles from './index.module.css';
 import Button from './Button';
 import validatorConfig from '../utils/validatorConfig';
 import validator from '../utils/validator';
+import { changePhone } from '../utils/changeForPhone';
 
 const Form = ({ display }) => {
   const [dataForm, setDataForm] = useState({
@@ -32,40 +33,13 @@ const Form = ({ display }) => {
   let validateKeyCode = '';
   function checkKeyDown(e) {
     validateKeyCode = e.keyCode;
-    return e.keyCode;
   }
 
   function handleChangeData(e) {
     const { target } = e;
-    let transormSTR = target.value;
-    console.log(transormSTR);
-    if (target.name === 'phone') {
-      let value = target.value.length;
-      if ((validateKeyCode !== 8 && value === 12) || value === 15) {
-        transormSTR = transormSTR + '-';
-      }
-      if (value === 4) {
-        transormSTR =
-          target.value[0] +
-          target.value[1] +
-          target.value[2] +
-          '(' +
-          target.value[3];
-      }
-      if (value === 7) {
-        transormSTR = transormSTR += ') ';
-      }
-      setDataForm((prevState) => ({
-        ...prevState,
-        [target.name]: transormSTR,
-      }));
-    } else {
-      setDataForm((prevState) => ({
-        ...prevState,
-        [target.name]: target.value,
-      }));
-    }
+    changePhone(target, validateKeyCode, setDataForm);
   }
+
   const displayCall = checkDisplay(display);
 
   return (
