@@ -1,0 +1,78 @@
+.app{    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;         
+}
+
+.buttonGetForm{
+    border: 2px solid rgba(224, 221, 221, 0.877);
+    background-color: rgba(54, 54, 54, 0.87);    
+    color: aliceblue;
+    width: 30%;
+    height: 10%;
+    border-radius: 3px;     
+    font-size: 20px;
+    font-weight: 600;   
+    margin: 0 auto;
+    margin-top: 20%;    
+}
+.buttonBack{
+    border: 2px solid rgba(224, 221, 221, 0.877);
+    background-color: rgba(54, 54, 54, 0.87);    
+    color: aliceblue;
+    width: 30%;
+    height: 10%;
+    border-radius: 3px;     
+    font-size: 20px;
+    font-weight: 600;   
+    margin: 0 auto;
+    margin-top: 2%;     
+}
+/* ========================== */
+/*height*/
+@media (max-height: 750px ) {
+     .buttonGetForm{
+        margin-top: 10%;
+     }
+}
+@media (max-height: 650px ) {
+    .buttonGetForm{
+       margin-top: 15%;
+    }
+    .buttonBack{margin-top: 5px;
+        height: 8%;
+        margin-bottom: 10px;
+    }
+}
+@media (max-height: 550px ) {
+    .buttonGetForm{
+       margin-top: 10%;
+       height: 20%;
+    }
+}
+/* ======= */
+/*width*/
+@media (max-width: 800px ) {
+    .buttonGetForm{
+       width: 50%;
+    }
+}
+@media (max-width: 700px ) {
+    .buttonGetForm{
+       width: 65%;
+    }
+    .buttonBack{
+        width: 60%;
+     }
+}
+@media (max-width: 600px ) {
+    .buttonGetForm{
+       width: 75%;
+    }
+}
+@media (max-width: 500px ) {
+    .buttonGetForm{
+       width: 80%;
+    }
+}
