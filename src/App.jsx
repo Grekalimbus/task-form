@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Button from './components/Button';
 import Form from './components/Form';
 import styles from './index.module.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [display, setDisplayForm] = useState(false);
@@ -20,6 +22,7 @@ function App() {
   };
   return (
     <div className={styles.app}>
+      <ToastContainer />
       <Button
         styleDisplay={styleButtonForm}
         handleDisplay={handleDisplay}

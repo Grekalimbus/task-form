@@ -5,6 +5,7 @@ import Button from './Button';
 import validatorConfig from '../utils/validatorConfig';
 import validator from '../utils/validator';
 import { changePhone } from '../utils/changeForPhone';
+import { toast } from 'react-toastify';
 
 const Form = ({ display }) => {
   const [dataForm, setDataForm] = useState({
@@ -23,10 +24,6 @@ const Form = ({ display }) => {
     return Object.keys(errors).length === 0;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   function checkDisplay(display) {
     return !display ? { display: 'none' } : { display: '' };
   }
@@ -42,6 +39,15 @@ const Form = ({ display }) => {
 
   const displayCall = checkDisplay(display);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const isValid = validate();
+    if (!isValid) {
+      return toast.dark('Заполните правильно все участки формы');
+    }
+    if (isValid) {
+    }
+  };
   return (
     <form
       onSubmit={handleSubmit}
