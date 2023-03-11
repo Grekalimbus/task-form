@@ -7,8 +7,10 @@ import validator from '../../../utils/validator.js';
 import { changePhone } from '../../../utils/changeForPhone.js';
 import { toast } from 'react-toastify';
 import dataFormService from '../../../services/dataForm.service.js';
+import { useHistory } from 'react-router-dom';
 
 const Form = ({ display }) => {
+  const history = useHistory();
   const [dataForm, setDataForm] = useState({
     phone: '+7 ',
     name: '',
@@ -47,7 +49,11 @@ const Form = ({ display }) => {
       return toast.dark('Заполните правильно все участки формы');
     }
     if (isValid) {
+      toast.dark('Данные отправляються на сервер');
       await dataFormService.post(dataForm);
+      setTimeout(() => {
+        history.push('/result');
+      }, 1500);
     }
   };
   return (
