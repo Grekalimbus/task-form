@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Field from './Field';
 import styles from './index.module.css';
 import Button from './Button';
-import validatorConfig from '../utils/validatorConfig';
-import validator from '../utils/validator';
-import { changePhone } from '../utils/changeForPhone';
+import validatorConfig from '../../../utils/validatorConfig';
+import validator from '../../../utils/validator.js';
+import { changePhone } from '../../../utils/changeForPhone.js';
 import { toast } from 'react-toastify';
-import dataFormService from '../services/dataForm.service.js';
+import dataFormService from '../../../services/dataForm.service.js';
 
 const Form = ({ display }) => {
   const [dataForm, setDataForm] = useState({
@@ -40,13 +40,14 @@ const Form = ({ display }) => {
 
   const displayCall = checkDisplay(display);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const isValid = validate();
     if (!isValid) {
       return toast.dark('Заполните правильно все участки формы');
     }
     if (isValid) {
+      await dataFormService.post(dataForm);
     }
   };
   return (
