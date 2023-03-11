@@ -19,7 +19,11 @@
     color: aliceblue;
     font-size: 20px;    
 }
-
+.titleError{
+    color: rgb(228, 4, 4);
+    font-weight: 500;
+    font-size: 16px;
+}
 /* FIELD COMPONENT */
 .fieldOneInput{
     width: 90%;
@@ -68,6 +72,15 @@
 
 /* Big height */
 @media (min-height: 940px ) and (min-width: 800px){
+    .formWrapper{   
+        width: 60%;     
+        height: 80%;
+    }
+    .button{
+        font-size: 28px;
+    }    
+}
+@media (min-height: 600px ) and (max-width: 650px){
     .formWrapper{   
         width: 60%;     
         height: 80%;

@@ -9,7 +9,6 @@ function App() {
   const [styleButtonBack, setStyleButtonBack] = useState({ display: 'none' });
 
   const handleDisplay = () => {
-    console.log('fd');
     setDisplayForm((prevState) => (prevState = !prevState));
     if (!display) {
       setStyleButtonForm({ display: 'none' });
