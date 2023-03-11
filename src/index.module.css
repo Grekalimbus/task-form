@@ -1,0 +1,7 @@
+.app{    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    border: 2px solid rgba(224, 221, 221, 0.877);       
+}
