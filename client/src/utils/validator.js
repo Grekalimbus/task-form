@@ -1,5 +1,3 @@
-const usuallyСharacters =
-  'qwertyuioplkjhgfdsazxcvbnmйцукенгшщздлорпавыфячсмить';
 const numberStr = '0123456789';
 const specialСharacters = '`@!#$%^&*()_+=-~?/>.<,:;"{}]["№;%:? ';
 

@@ -53,11 +53,9 @@
     font-weight: 500;
     border: 2px solid rgba(224, 221, 221, 0.877);
     background-color: rgba(231, 231, 231, 0.781);   
-    display: block;
-   
+    display: block;   
 }
 /* FIELD COMPONENT */
-
 
 /* ======================= */
 .button{
