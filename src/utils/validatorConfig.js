@@ -7,15 +7,21 @@ const validatorConfig = {
     notLength: {
       message: 'Кол-во цифр не соответсвует',
     },
-    otherSymbol: {
+    otherSymbolForPhone: {
       message: 'Разрешены только цифры',
     },
   },
   name: {
     isRequired: { message: 'Обязательно для заполнения' },
+    otherSymbol: {
+      message: 'Запрещаются спецсимволы',
+    },
   },
   message: {
     isRequired: { message: 'Обязательно для заполнения' },
+    otherSymbol: {
+      message: 'Запрещаются спецсимволы',
+    },
   },
 };
 
