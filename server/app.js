@@ -1,19 +1,18 @@
 import express from 'express';
 import mongoose from 'mongoose';
-// import router from './routes/index.js';
+import router from './routes/index.js';
 import fileUpload from 'express-fileupload';
-import DataForm from './models/DataForm.js';
 
 const PORT = 3000;
 const URL =
-  'mongodb+srv://danil:mongoose123@node-course.twnp2ms.mongodb.net/task-form?retryWrites=true&w=majority';
+  'mongodb+srv://danil:tf11032023@task-form.1xvszi5.mongodb.net/?retryWrites=true&w=majority';
 
 const app = express();
 app.use(express.json());
 app.use(fileUpload({}));
 app.use(express.static('static'));
 app.use(express.urlencoded({ extended: false }));
-// app.use('/api', router);
+app.use('/api', router);
 
 app.get('/', (req, res) => {
   res.status(200).json('Request Get');
@@ -29,6 +28,7 @@ app.post('/', async (req, res) => {
 
 async function started() {
   try {
+    mongoose.set('strictQuery', true);
     await mongoose.connect(URL);
     console.log('Conect MongoDB!!!');
     app.listen(PORT, () => {
