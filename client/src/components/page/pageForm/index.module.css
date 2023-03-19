@@ -13,7 +13,7 @@
     margin-top: 3%;
     border-radius: 3px;     
     opacity: 0.95;
-    transition: all 1s;
+    transition: all 1s;    
 }
 .title{
     color: aliceblue;
@@ -69,6 +69,22 @@
 }
 /* ======================= */
 
+@media (min-height: 900px ) and (min-width: 800px){    
+    .fieldOneInput{
+        height: 12%;
+    }
+    .input{
+        height: 40%;
+    }       
+}
+@media (min-height: 900px ) and (min-width: 700px){    
+    .fieldOneInput{
+        height: 14%;
+    }
+    .input{
+        height: 40%;
+    }       
+}
 /* Big height */
 @media (min-height: 700px ) and (min-width: 1000px){
     .formWrapper{             
@@ -76,7 +92,7 @@
     }
     .button{
         font-size: 28px;
-    }    
+    }        
 }
 @media (min-height: 940px ) and (min-width: 800px){
     .formWrapper{   
@@ -110,6 +126,9 @@
         height: 90%;
         margin-top: 15px;
     }
+    .fieldOneInput{
+        height: 25%;
+    }
     .button{
         font-size: 28px;
     }    
@@ -125,18 +144,37 @@
     .label{
         margin-top: 3px;
         margin-bottom: 2px;
-        font-size: 18px;   
+        font-size: 16px;   
         color: rgb(253, 253, 253); 
     }
     .button{
-        font-size: 20px;
+        font-size: 18px;
     }    
+    .title{
+        font-size: 16px;
+    }
+}
+@media (max-height: 400px ){    
+    .fieldOneInput{
+        height: 28%;
+    }  
+    .label{
+        font-size: 16px;
+    }
+    .title{
+        font-size: 16px;
+    }    
+    .button{
+        font-size: 16px;
+        height: 8%;
+    }  
 }
 /* =================== */
 /* Small width display */
-@media (max-width: 900px ){
+@media (max-width: 1000px ){
     .formWrapper{    
-        width: 40%;         
+        width: 40%;  
+        height: 80%;              
     }       
 }
 @media (max-width: 800px ){
