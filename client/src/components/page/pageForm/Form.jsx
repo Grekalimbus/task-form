@@ -57,11 +57,7 @@ const Form = ({ display }) => {
     }
   };
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={displayCall}
-      className={styles.formWrapper}
-    >
+    <form onSubmit={handleSubmit} style={displayCall} className={styles.formWrapper}>
       <h2 className={styles.title}>Форма обратной связи</h2>
       <Field
         checkKeyDown={checkKeyDown}
