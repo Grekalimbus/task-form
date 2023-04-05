@@ -19,9 +19,6 @@ const validatorConfig = {
   },
   message: {
     isRequired: { message: 'Обязательно для заполнения' },
-    otherSymbol: {
-      message: 'Запрещаются спецсимволы',
-    },
   },
 };
 
